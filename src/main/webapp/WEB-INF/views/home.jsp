@@ -33,5 +33,7 @@
     <input type="file" name="file">
     <button>업로드</button>
 </form>
+<img src="/imgs/kakao.png"/>
+<img src="/upload/kakao.png"/>
 </body>
 </html>
