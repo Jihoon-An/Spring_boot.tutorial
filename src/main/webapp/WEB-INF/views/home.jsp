@@ -30,19 +30,10 @@
 
 <form action="/fileUpload" method="post" enctype="multipart/form-data">
     <input type="text" name="message">
-    <input type="file" name="profileImg">
+    <input type="file" name="file">
     <button>업로드</button>
 </form>
-
-<br>
-<br>
-
-<form action="/test" method="post">
-    <input type="text" name="test_text">
-
-    <button type="submit">submit</button>
-</form>
-
-
+<img src="/imgs/kakao.png"/>
+<img src="/upload/kakao.png"/>
 </body>
 </html>

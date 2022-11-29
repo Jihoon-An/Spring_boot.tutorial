@@ -1,7 +1,6 @@
 package com.example.demo2.controller;
 
 import com.example.demo2.dto.MemberDTO;
-import com.example.demo2.dto.TestDTO;
 import com.example.demo2.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,7 +34,7 @@ public class HomeController {
     }
 
     @PostMapping("/fileUpload")
-    public String fileUpload(String message, MultipartFile[] profileImg) throws IOException {
+    public String fileUpload(String message, MultipartFile[] file) throws IOException {
 
         // 경로 지정
         String realPath = session.getServletContext().getRealPath("upload");
@@ -47,19 +46,11 @@ public class HomeController {
         }
 
         // 파일 이름 설정
-        String orgName = profileImg[0].getOriginalFilename();
+        String orgName = file[0].getOriginalFilename();
         String sysName = UUID.randomUUID() + "_" + orgName;
 
         // 파일 복사
-        profileImg[0].transferTo(new File(filePath+"/"+sysName));
-
-        return "redirect:/";
-    }
-
-    @PostMapping("/test")
-    public String testText(TestDTO testDTO) {
-
-        System.out.println(testDTO.getTestText());
+        file[0].transferTo(new File(filePath+"/"+sysName));
 
         return "redirect:/";
     }
